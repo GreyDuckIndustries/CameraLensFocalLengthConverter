@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focal Length Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="converter-container">
+        <h1>Focal Length Converter</h1>
+        <p id="toolDescription">Convert a lens focal length on a specific sensor TO its Full Frame equivalent.</p>
+
+        <div class="input-group mode-selector">
+            <label>Conversion Mode:</label>
+            <div>
+                <input type="radio" id="modeToFF" name="conversionMode" value="toFF" checked>
+                <label for="modeToFF">Sensor → Full Frame</label>
+            </div>
+            <div>
+                <input type="radio" id="modeFromFF" name="conversionMode" value="fromFF">
+                <label for="modeFromFF">Full Frame → Sensor</label>
+            </div>
+        </div>
+
+        <div class="input-group">
+             <label for="focalLength" id="inputLabel">Lens Focal Length (mm):</label>
+            <input type="number" id="focalLength" placeholder="e.g., 50">
+        </div>
+
+        <div class="input-group">
+             <label for="sensorType" id="sensorSelectLabel">Original Sensor Type:</label>
+            <select id="sensorType">
+                <option value="1.6">APSC (Canon, ~1.6x)</option>
+                <option value="1.5">APSC (Nikon, Sony, Fuji APS-C, ~1.5x)</option>
+                <option value="2.7">1-inch (~2.7x)</option>
+                <option value="2.0">Micro Four Thirds (2.0x)</option>
+                <option value="0.79">Fuji GFX Medium Format (~0.79x)</option>
+                <option value="3.5">iPhone 14/15/16 Pro/Max (Main Cam, ~3.5x)</option>
+            </select>
+        </div>
+
+        <button id="convertButton">Convert</button>
+
+        <div class="result-group">
+             <h2 id="resultLabel">Full Frame Equivalent:</h2>
+            <p id="result">-- mm</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
